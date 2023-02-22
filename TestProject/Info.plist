@@ -21,5 +21,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Sk-Modernist-Regular.otf</string>
+		<string>Sk-Modernist-Bold.otf</string>
+	</array>
 </dict>
 </plist>

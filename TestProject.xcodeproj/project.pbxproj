@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BA7CF94A54EDD5484357663 /* libPods-TestProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CCEC0BDD99D3641D6ECCD6A /* libPods-TestProject.a */; };
+		E723C0F129A4FBB300CB2894 /* DoorsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723C0F029A4FBB300CB2894 /* DoorsState.swift */; };
+		E723C0F329A4FBFC00CB2894 /* Door.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723C0F229A4FBFC00CB2894 /* Door.swift */; };
+		E723C0F529A4FE8800CB2894 /* DoorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E723C0F429A4FE8800CB2894 /* DoorTableViewCell.swift */; };
+		E74691EE29A53B1F00D3552B /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E74691EC29A53B1F00D3552B /* Sk-Modernist-Bold.otf */; };
+		E74691EF29A53B1F00D3552B /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E74691ED29A53B1F00D3552B /* Sk-Modernist-Regular.otf */; };
 		E757482629A3D17A00A144C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757482529A3D17A00A144C8 /* AppDelegate.swift */; };
 		E757482829A3D17A00A144C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757482729A3D17A00A144C8 /* SceneDelegate.swift */; };
 		E757482A29A3D17A00A144C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757482929A3D17A00A144C8 /* ViewController.swift */; };
@@ -16,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CCEC0BDD99D3641D6ECCD6A /* libPods-TestProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA536FB75BD562BB7DB10281 /* Pods-TestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.debug.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.debug.xcconfig"; sourceTree = "<group>"; };
+		E723C0F029A4FBB300CB2894 /* DoorsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsState.swift; sourceTree = "<group>"; };
+		E723C0F229A4FBFC00CB2894 /* Door.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Door.swift; sourceTree = "<group>"; };
+		E723C0F429A4FE8800CB2894 /* DoorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorTableViewCell.swift; sourceTree = "<group>"; };
+		E74691EC29A53B1F00D3552B /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
+		E74691ED29A53B1F00D3552B /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sk-Modernist-Regular.otf"; sourceTree = "<group>"; };
 		E757482229A3D17A00A144C8 /* TestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E757482529A3D17A00A144C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E757482729A3D17A00A144C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +37,7 @@
 		E757482E29A3D17D00A144C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E757483129A3D17D00A144C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E757483329A3D17D00A144C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDB7FCBE1A60DD70FA925A2 /* Pods-TestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProject.release.xcconfig"; path = "Target Support Files/Pods-TestProject/Pods-TestProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA7CF94A54EDD5484357663 /* libPods-TestProject.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6318FEEC21EC1402F701A04C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA536FB75BD562BB7DB10281 /* Pods-TestProject.debug.xcconfig */,
+				FBDB7FCBE1A60DD70FA925A2 /* Pods-TestProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E74691EB29A53AC900D3552B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E74691EC29A53B1F00D3552B /* Sk-Modernist-Bold.otf */,
+				E74691ED29A53B1F00D3552B /* Sk-Modernist-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		E757481929A3D17A00A144C8 = {
 			isa = PBXGroup;
 			children = (
 				E757482429A3D17A00A144C8 /* TestProject */,
 				E757482329A3D17A00A144C8 /* Products */,
+				6318FEEC21EC1402F701A04C /* Pods */,
+				ED807CF351E1C7CE78624C68 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +91,8 @@
 		E757482429A3D17A00A144C8 /* TestProject */ = {
 			isa = PBXGroup;
 			children = (
+				E74691EB29A53AC900D3552B /* Fonts */,
+				E723C0F029A4FBB300CB2894 /* DoorsState.swift */,
 				E757482529A3D17A00A144C8 /* AppDelegate.swift */,
 				E757482729A3D17A00A144C8 /* SceneDelegate.swift */,
 				E757482929A3D17A00A144C8 /* ViewController.swift */,
@@ -63,8 +100,18 @@
 				E757482E29A3D17D00A144C8 /* Assets.xcassets */,
 				E757483029A3D17D00A144C8 /* LaunchScreen.storyboard */,
 				E757483329A3D17D00A144C8 /* Info.plist */,
+				E723C0F229A4FBFC00CB2894 /* Door.swift */,
+				E723C0F429A4FE8800CB2894 /* DoorTableViewCell.swift */,
 			);
 			path = TestProject;
+			sourceTree = "<group>";
+		};
+		ED807CF351E1C7CE78624C68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CCEC0BDD99D3641D6ECCD6A /* libPods-TestProject.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +121,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E757483629A3D17D00A144C8 /* Build configuration list for PBXNativeTarget "TestProject" */;
 			buildPhases = (
+				531677084CF6C8C81F722FB7 /* [CP] Check Pods Manifest.lock */,
 				E757481E29A3D17A00A144C8 /* Sources */,
 				E757481F29A3D17A00A144C8 /* Frameworks */,
 				E757482029A3D17A00A144C8 /* Resources */,
@@ -125,13 +173,40 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74691EF29A53B1F00D3552B /* Sk-Modernist-Regular.otf in Resources */,
 				E757483229A3D17D00A144C8 /* LaunchScreen.storyboard in Resources */,
 				E757482F29A3D17D00A144C8 /* Assets.xcassets in Resources */,
+				E74691EE29A53B1F00D3552B /* Sk-Modernist-Bold.otf in Resources */,
 				E757482D29A3D17A00A144C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		531677084CF6C8C81F722FB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E757481E29A3D17A00A144C8 /* Sources */ = {
@@ -141,6 +216,9 @@
 				E757482A29A3D17A00A144C8 /* ViewController.swift in Sources */,
 				E757482629A3D17A00A144C8 /* AppDelegate.swift in Sources */,
 				E757482829A3D17A00A144C8 /* SceneDelegate.swift in Sources */,
+				E723C0F329A4FBFC00CB2894 /* Door.swift in Sources */,
+				E723C0F129A4FBB300CB2894 /* DoorsState.swift in Sources */,
+				E723C0F529A4FE8800CB2894 /* DoorTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +301,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -276,12 +355,14 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		E757483729A3D17D00A144C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA536FB75BD562BB7DB10281 /* Pods-TestProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,6 +374,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -303,6 +386,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = my.company.TestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,6 +394,7 @@
 		};
 		E757483829A3D17D00A144C8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBDB7FCBE1A60DD70FA925A2 /* Pods-TestProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,6 +406,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +418,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = my.company.TestProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
