@@ -3,6 +3,7 @@ import UIKit
 
 final class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private var doors: [Door] = []
+    private var isSelectedCell = false
     
     private lazy var interImageView = UIImageView()
     private lazy var backSettingsView = UIView()
@@ -10,8 +11,6 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private lazy var homeImageView = UIImageView()
     private lazy var myDoorsLbl = UILabel()
     private lazy var doorsTableView = UITableView()
-    
-    private var isSelectedCell = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +44,7 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
             $0.height.equalTo(17)
         }
     }
+    
     private func addSettings() {
         backSettingsView.layer.cornerRadius = 13
         backSettingsView.layer.borderWidth = 1
@@ -148,17 +148,22 @@ final class ViewController: UIViewController, UIGestureRecognizerDelegate {
     private func unlockedLoop(indexPath: IndexPath) {
         if isSelectedCell { return }
         isSelectedCell = true
+        
         let cell = doorsTableView.cellForRow(at: indexPath) as! DoorTableViewCell
         var door = doors[indexPath.row]
-        cell.doorsState = .unlocking
+        door.status = .unlocking
+        cell.doorsState = door.status
         doors[indexPath.row] = door
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            guard let self else { return }
+            
             door.status = .unlocked
             cell.doorsState = door.status
             self.doors[indexPath.row] = door
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                 guard let self else { return }
+                
                 door.status = .locked
                 cell.doorsState = door.status
                 self.doors[indexPath.row] = door

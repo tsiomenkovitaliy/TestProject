@@ -16,6 +16,7 @@ final class DoorTableViewCell: UITableViewCell {
         UIColor(named: "LockedColor")?.cgColor,
         UIColor(named: "LockedEndColor")?.cgColor
     ]
+    
     private lazy var unlockColors = [
         UIColor(named: "UnlockedStartColor")?.cgColor,
         UIColor(named: "UnlockedEndColor")?.cgColor
@@ -23,6 +24,7 @@ final class DoorTableViewCell: UITableViewCell {
     
     private var lockedConstraint: Constraint!
     private var unlockingConstraint: Constraint!
+    
     var indexPath: IndexPath!
     
     var doorName = "" {
@@ -48,10 +50,7 @@ final class DoorTableViewCell: UITableViewCell {
         doorImageView.image = nil
         stateImageView.image = nil
         doorState.textColor = #colorLiteral(red: 0, green: 0.2669999897, blue: 0.5450000167, alpha: 1)
-        
-        backImageView.layer.sublayers?.forEach({
-            $0.removeFromSuperlayer()
-        })
+        removeGradient()
     }
     
     var doorsState = DoorStatus.locked {
@@ -64,23 +63,26 @@ final class DoorTableViewCell: UITableViewCell {
                 doorImageView.image = #imageLiteral(resourceName: "Verify")
                 stateImageView.image = #imageLiteral(resourceName: "Locked.png")
                 doorState.textColor = #colorLiteral(red: 0, green: 0.2669999897, blue: 0.5450000167, alpha: 1)
+                stateImageView.contentMode = .scaleAspectFit
+                stateImageView?.layer.removeAllAnimations()
             case .unlocked:
                 addGradientLayer()
                 updateDoorImageConstraints()
                 doorImageView.image = #imageLiteral(resourceName: "Blocked")
                 stateImageView.image = #imageLiteral(resourceName: "Unlocked")
                 doorState.textColor = #colorLiteral(red: 0, green: 0.2666666667, blue: 0.5450980392, alpha: 0.5)
+                stateImageView.contentMode = .scaleAspectFit
+                stateImageView?.layer.removeAllAnimations()
             case .unlocking:
-                if backImageView.layer.sublayers!.count > 1 {
-                    backImageView.layer.sublayers![0].removeFromSuperlayer()
-                }
+                removeGradient()
                 doorImageView.image = #imageLiteral(resourceName: "Dots")
                 lockedConstraint.deactivate()
                 doorImageView.snp.makeConstraints {
                     unlockingConstraint = $0.centerX.centerY.equalTo(backImageView).constraint
                 }
                 unlockingConstraint.activate()
-                
+                stateImageView.contentMode = .topLeft
+                addAnimation()
                 stateImageView.image = #imageLiteral(resourceName: "Spinner")
                 doorState.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.17)
             }
@@ -98,13 +100,11 @@ final class DoorTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addGradientLayer() {
-        if backImageView.layer.sublayers!.count > 1 {
-            backImageView.layer.sublayers![0].removeFromSuperlayer()
-        }
+    private func addGradientLayer() {
+        removeGradient()
         
         let layer = CAGradientLayer()
-        layer.colors = doorsState == .locked ? lockColors : unlockColors as [Any]
+        layer.colors = doorsState == .locked ? lockColors : unlockColors
         layer.locations = [0, 1]
         layer.startPoint = CGPoint(x: 0.25, y: 0.5)
         layer.endPoint = CGPoint(x: 0.75, y: 0.5)
@@ -112,6 +112,20 @@ final class DoorTableViewCell: UITableViewCell {
         layer.bounds = backImageView.bounds.insetBy(dx: -0.5 * backImageView.bounds.size.width, dy: -0.5 * backImageView.bounds.size.height)
         layer.position = backImageView.center
         backImageView.layer.insertSublayer(layer, at: 0)
+    }
+    
+    private func removeGradient() {
+        if backImageView.layer.sublayers!.count > 1 {
+            backImageView.layer.sublayers![0].removeFromSuperlayer()
+        }
+    }
+    
+    private func addAnimation() {
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        animation.duration = 0.75
+        animation.toValue = CGFloat.pi * 2.0
+        animation.repeatCount = .infinity
+        stateImageView?.layer.add(animation, forKey: "rotationAnimation")
     }
     
     private func updateDoorImageConstraints() {
@@ -122,9 +136,10 @@ final class DoorTableViewCell: UITableViewCell {
         lockedConstraint.activate()
     }
     
-    func configure() {
+    private func configure() {
         selectionStyle = .none
         backView.frame.size = CGSize(width: contentView.bounds.height, height: contentView.bounds.width)
+        
         addSubview(backView)
         backView.snp.makeConstraints{
             $0.left.right.equalToSuperview().inset(27)
@@ -169,8 +184,6 @@ final class DoorTableViewCell: UITableViewCell {
         stateImageView.snp.makeConstraints{
             $0.top.equalToSuperview().inset(18)
             $0.right.equalToSuperview().inset(28)
-            $0.height.equalTo(45)
-            $0.width.equalTo(41)
         }
         
         stateImageView.image = #imageLiteral(resourceName: "Unlocked")
